@@ -1,0 +1,45 @@
+第一步：npm install -g @vue/cli
+第二步：先cnpm i vue-router 后降 npm install --save vue-router@3
+第三步：npm i element-ui -S
+第四步：配置main.js
+import Vue from 'vue'
+import App from './App.vue'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css';
+import router from './router'
+Vue.config.productionTip = false
+Vue.use(ElementUI);
+new Vue({
+  router,
+  render: h => h(App),
+}).$mount('#app')
+第五步：配置router.js下的index.js
+import Vue from 'vue'
+import VueRouter from "vue-router";
+import HomeView from '../view/layout/home'
+import LeftView from '../view/layout/left'
+Vue.use(VueRouter)
+
+const routes=[{
+	path:'/',
+	name:'home',
+	component:HomeView,
+	children:[{
+		path:'',
+		name:'',
+		component:,
+}]
+},{path:'/left',
+	name:'left',
+	component:LeftView	
+}]
+
+const router=new VueRouter({
+	routes
+})
+export default router
+第6步:配置vue.config.js
+lintOnSave:false
+
+
+使用深度选择器  /deep/ css样式可能会生效
