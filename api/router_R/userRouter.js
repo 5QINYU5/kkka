@@ -1,0 +1,8 @@
+const router_R=require('../router/user.js')
+router.post('/reguser',reguser)
+router.post('/login',login)
+router.post('/add',add)
+router.post('/del',del)
+router.post('/alter',alter)
+router.post('/check',check)
+router.post('/img',img)
